@@ -4,7 +4,8 @@ package edu.westga.ryanfleminginvestmentcalculator.model;
  * Model for the Investment calculator. Calculates the future value of an
  * annuity
  *
- * Created by Ryan on 3/4/2016.
+ * @author Ryan Fleming
+ * @version 3/4/2016
  */
 public class InvestmentCalculator {
 
@@ -13,7 +14,7 @@ public class InvestmentCalculator {
     final private int paymentPeriod;
 
     /**
-     * Constructor for the Investement calculator. Accepts a payment amount,
+     * Constructor for the Investment calculator. Accepts a payment amount,
      * a rate, and a number of periods for the calculation.
      * @param payment - the amount of each payment
      * @param rate - the percentage rate for each period
@@ -25,7 +26,11 @@ public class InvestmentCalculator {
         this.paymentPeriod = period;
     }
 
-    public double getValue() {
-        return 0.0;
+    public double calculateValue() {
+        if (this.theRate == 0.0) {
+            return this.paymentAmount * this.paymentPeriod;
+        }
+        double ratePercent = this.theRate / 100.00;
+        return paymentAmount * ((Math.pow((1.0 + ratePercent), this.paymentPeriod) - 1.0) / ratePercent);
     }
 }
