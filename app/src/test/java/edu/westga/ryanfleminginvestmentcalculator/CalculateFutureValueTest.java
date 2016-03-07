@@ -47,7 +47,7 @@ public class CalculateFutureValueTest {
     }
 
     @Test
-    public void shouldReturn630WhenPayment300Rate10Period2() {
+    public void shouldReturn630WhenPayment300Rate10Period2() throws Exception {
         this.testCalc = new InvestmentCalculator(300.00, 10.0, 2);
         assertEquals(630.00, this.testCalc.calculateValue(), 2);
     }
