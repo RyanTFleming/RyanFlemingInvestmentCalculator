@@ -76,13 +76,14 @@
         android:id="@+id/btnCalculate"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
-        android:enabled="true" />
+        android:enabled="true"
+        android:onClick="onCalculateBtnClick" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/default_value_string"
+        android:text="@string/default_result_string"
         android:id="@+id/textViewResult"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp" />

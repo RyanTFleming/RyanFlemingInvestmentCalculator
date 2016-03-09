@@ -8,4 +8,5 @@
     <string name="calculate_button_string">Calculate</string>
     <string name="default_value_string">0.00</string>
     <string name="default_period_value_string">0</string>
+    <string name="default_result_string">$0.00</string>
 </resources>
