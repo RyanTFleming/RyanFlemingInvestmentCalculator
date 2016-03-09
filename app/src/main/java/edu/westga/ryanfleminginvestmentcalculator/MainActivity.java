@@ -10,9 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.text.Format;
 
 import edu.westga.ryanfleminginvestmentcalculator.model.InvestmentCalculator;
 
@@ -88,7 +85,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        this.calculator = new InvestmentCalculator(payment, rate, period);
+        if (this.calculator == null) {
+            this.calculator = new InvestmentCalculator(payment, rate, period);
+        } else {
+            this.calculator.setPaymentAmount(payment);
+            this.calculator.setRateAmount(rate);
+            this.calculator.setPeriod(period);
+        }
+
         Double value = this.calculator.calculateValue();
 
         String resultString = String.format("$%,.2f", value);

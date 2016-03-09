@@ -9,9 +9,9 @@ package edu.westga.ryanfleminginvestmentcalculator.model;
  */
 public class InvestmentCalculator {
 
-    final private double paymentAmount;
-    final private double theRate;
-    final private int paymentPeriod;
+    private double paymentAmount;
+    private double theRate;
+    private int paymentPeriod;
 
     /**
      * Constructor for the Investment calculator. Accepts a payment amount,
@@ -23,6 +23,18 @@ public class InvestmentCalculator {
     public InvestmentCalculator(double payment, double rate, int period) {
         this.paymentAmount = payment;
         this.theRate = rate;
+        this.paymentPeriod = period;
+    }
+
+    public void setPaymentAmount(double payment) {
+        this.paymentAmount = payment;
+    }
+
+    public void setRateAmount(double rate) {
+        this.theRate = rate;
+    }
+
+    public void setPeriod(int period) {
         this.paymentPeriod = period;
     }
 
